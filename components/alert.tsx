@@ -1,6 +1,7 @@
 import Container from './container'
 import cn from 'classnames'
 import { EXAMPLE_PATH } from '../lib/constants'
+import Link from 'next/link'
 
 export default function Alert({ preview }) {
   return (
@@ -11,28 +12,16 @@ export default function Alert({ preview }) {
       })}
     >
       <Container>
-        <div className="py-2 text-center text-sm">
+        <div className="py-2 text-center bg-white text-gray-400">
           {preview ? (
             <>
-              This is a page preview.{' '}
-              <a
-                href="/api/exit-preview"
-                className="underline hover:text-cyan duration-200 transition-colors"
-              >
-                Click here
-              </a>{' '}
-              to exit preview mode.
+              <Link href={"/"} className="text-black">SmartMinCar</Link>
             </>
           ) : (
             <>
-              The source code for this blog is{' '}
-              <a
-                href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
-                className="underline hover:text-success duration-200 transition-colors"
-              >
-                available on GitHub
-              </a>
-              .
+                        <Link href={"/"} className="font-extrabold md:p-4 p-2 text-xl md:text-3xl text-black">SmartMinCar</Link>
+
+              
             </>
           )}
         </div>

@@ -26,6 +26,153 @@ async function fetchAPI(query = '', { variables }: Record<string, any> = {}) {
   }
   return json.data
 }
+export async function getAllCategoriesOfCars(preview) {
+  const data = await fetchAPI(
+    `query PostsByCategoryId {
+      categories(where: {name:"Cars"}) {
+        edges {
+          node {
+            children {
+              edges {
+                node {
+                  name
+                  slug
+                  children {
+                    
+                    edges {
+                      node {
+                        name , slug
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `,
+    {
+      variables: {
+        onlyEnabled: !preview,
+        preview,
+      },
+    }
+  )
+
+  return data?.categories.edges.map(({ node = {} }) => node);
+
+}
+export async function getAllCategories(preview) {
+  const data = await fetchAPI(
+    `query PostsByCategoryId {
+      categories(where: {name:"Categories"}) {
+        edges {
+          node {
+            children {
+              edges {
+                node {
+                  name
+                  slug
+                  children {
+                    
+                    edges {
+                      node {
+                        name , slug   children {
+                          edges {
+                            node {
+                              name
+                              slug }}}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  
+  `,
+    {
+      variables: {
+        onlyEnabled: !preview,
+        preview,
+      },
+    }
+  )
+
+  return data?.categories.edges.map(({ node = {} }) => node);
+
+}
+export async function getCategoryBySlug(slug: string ,preview) {
+  const data = await fetchAPI(
+    `
+    query CategoryBySlug($slug: ID!) {
+      category(id: $slug, idType: SLUG) {
+        databaseId
+        description
+        id
+        name
+        slug
+      }
+    }
+  `,
+    {
+      variables: {
+        onlyEnabled: !preview,
+        preview,
+        slug
+      },
+    }
+  )
+
+  return data
+}
+export async function getPostsByCategoryId(categoryId: string ,preview) {
+  const data = await fetchAPI( `
+  query PostsByCategoryId($categoryId: Int!) {
+    posts(where: { categoryId: $categoryId, hasPassword: false }) {
+      edges {
+        node {
+        title
+        excerpt
+         slug
+            date
+
+            author {
+              node {
+                name
+                firstName
+                lastName
+                avatar {
+                  url
+                }
+              }
+            }
+        featuredImage {
+          node {
+            sourceUrl
+          }
+        }
+        }
+      }
+    }
+  }
+  `,
+    {
+      variables: {
+        onlyEnabled: !preview,
+        preview,
+        categoryId
+      },
+    }
+  )
+
+  return data
+}
 
 export async function getPreviewPost(id, idType = 'DATABASE_ID') {
   const data = await fetchAPI(

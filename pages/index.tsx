@@ -9,27 +9,30 @@ import { getAllPostsForHome } from '../lib/api'
 import { CMS_NAME } from '../lib/constants'
 
 export default function Index({ allPosts: { edges }, preview }) {
-  const heroPost = edges[0]?.node
-  const morePosts = edges.slice(1)
 
   return (
     <Layout preview={preview}>
       <Head>
-        <title>{`Next.js Blog Example with ${CMS_NAME}`}</title>
+        <title>Smart Mini Car</title>
       </Head>
       <Container>
         <Intro />
-        {heroPost && (
-          <HeroPost
-            title={heroPost.title}
-            coverImage={heroPost.featuredImage}
-            date={heroPost.date}
-            author={heroPost.author}
-            slug={heroPost.slug}
-            excerpt={heroPost.excerpt}
+        <section>
+          {
+            edges.map((heroPost:any,i:number )=> (
+              <div className="" key={i}>
+                <HeroPost
+            title={heroPost.node.title}
+            coverImage={heroPost.node.featuredImage}
+            date={heroPost.node.date}
+            author={heroPost.node.author}
+            slug={heroPost.node.slug}
+            excerpt={heroPost.node.excerpt}
           />
-        )}
-        {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+              </div>
+            ))
+          }
+        </section>
       </Container>
     </Layout>
   )
