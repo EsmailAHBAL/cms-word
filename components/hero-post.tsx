@@ -52,12 +52,12 @@ className="aspect-square object-contain h-48 w-full "
   </div>
 
   <div className="flex flex-1 flex-col justify-between">
-    <div className="border-s border-gray-900/10 p-4 sm:border-l-transparent sm:p-6">
+    <div className="border-s border-gray-900/10 p-4 sm:border-l-transparent sm:p-6  md:h-[30vh]">
         <h3 className="font-bold uppercase text-gray-900">
         <Link
               href={`/posts/${slug}`}
-              className="hover:text-gray-300 text-black font-bold ease-in-out 
-              duration-1000 hover:text-xl transition "
+              className="hover:text-gray-800 text-black font-bold ease-in-out 
+              duration-1000 transition line-clamp-3 hover:line-clamp-none  hover:text-sm"
               dangerouslySetInnerHTML={{ __html: title }}
             ></Link>        </h3>
       
@@ -71,13 +71,12 @@ className="aspect-square object-contain h-48 w-full "
     </div>
 
     <div className="sm:flex sm:items-end sm:justify-end">
-      <a
-        href="#"
-        className="block rounded-sm  border-2 border-black 
+      <Link
+   href={`/posts/${slug}`}        className="block rounded-sm  border-2 border-black 
          px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition hover:bg-black hover:text-white ease-in-out "
       >
         Read Blog
-      </a>
+      </Link>
     </div>
   </div></div>
 </article>

@@ -13,13 +13,13 @@ export default function Layout({ preview, children }) {
         <Alert preview={preview} />
       <div className="min-h-screen max-w-7xl mx-auto">
    <CatNav />
-        <div className="grid grid-cols-1 gap-4 lg:grid-cols-4 lg:gap-8">
-  <div className="">
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-7 lg:gap-8">
+  <div className="col-span-1">
     <div className="border-2 py-4 border-x-0 border-black border-t-0 my-3 order-last md:order-first">Cars</div>
     <SideCat/>
     </div>
-  <main className="  lg:col-span-2 order-first lg:order-none">{children}</main>
-  <div className="   order-last lg:order-none pt-4"><More /></div>
+  <main className="  lg:col-span-4 order-first lg:order-none">{children}</main>
+  <div className="   order-last lg:order-none pt-4 col-span-2"><More /></div>
 </div>
       </div>
       <Footer />

@@ -7,11 +7,18 @@ import AppContext from '../lib/app.context'
 import { getAllCategories, getAllCategoriesOfCars, getAllPostsForHome } from '../lib/api'
 import preview from './api/preview'
 import 'bulma/css/bulma.css';
+import {Roboto_Mono } from 'next/font/google'
+const Font = Roboto_Mono ({
+weight:"300",subsets:['cyrillic-ext']
+})
 function MyApp({ Component, pageProps ,data  }) 
 {
   return <Provider store={store}> 
   <AppContext.Provider value={{categories : data}}>
+<div className={Font.className}>
   <Component {...pageProps} />
+
+</div>
 
   </AppContext.Provider>
   </Provider>
