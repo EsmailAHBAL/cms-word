@@ -41,7 +41,7 @@ const firstIndex = lastIndex - ITEMS
         <title>Smart Mini Car</title>
       </Head>
        <div className="grid grid-cols-1 md:grid-cols-6 ">
-        <div className="col-span-1">
+        <div className="col-span-1 order-last md:order-none">
           <SideCat></SideCat>
         </div>
         <div className="col-span-5 ">
