@@ -10,7 +10,7 @@ function  Pagination ({getCurrentPage,nPage}:{getCurrentPage:(n:number)=> void,n
    <li key={ii}>
    <p
    onClick={()=> getCurrentPage(ii+1)}
-     className="block h-8 w-8 rounded border border-gray-100 bg-white text-center leading-8 text-gray-900"
+     className="block h-8 w-8 rounded border border-lg text-lg bg-white text-center leading-8 text-gray-900 border-black"
    >
      {ii +1}
    </p>

@@ -11,13 +11,13 @@ import SectionSeparator from '../../components/section-separator'
 import Layout from '../../components/layout'
 import PostTitle from '../../components/post-title'
 import Tags from '../../components/tags'
-import { getAllPostsWithSlug, getCategoryBySlug, getPostAndMorePosts, getPostsByCategoryId } from '../../lib/api'
+import { getAllPostsWithSlug, getCategoryBySlug, getPostsByCategoryId } from '../../lib/api'
 import { CMS_NAME } from '../../lib/constants'
 import Link from 'next/link'
 import HeroPost from '../../components/hero-post'
 
 export default function index({ posts ,preview}) {
-if(!posts?.edges) return <Layout preview={preview}><div className="flex justify-center items-center w-full h-[40vh]">.... No Post  In This Category</div></Layout>
+if(!posts?.edges.length) return <Layout preview={preview}><div className="flex justify-center items-center w-full h-[40vh]">.... No Post  In This Category 😅 </div></Layout>
 
   return (
   <Layout preview={preview}>

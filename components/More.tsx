@@ -16,6 +16,7 @@ const More =() => {
     {
  post.node.featuredImage ? (
   <Image
+  priority
 height={5000} width={4000}
 alt="Office"
 src={post.node.featuredImage.node.sourceUrl}

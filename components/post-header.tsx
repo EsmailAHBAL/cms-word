@@ -16,7 +16,11 @@ export default function PostHeader({
       <PostTitle>{title}</PostTitle>
     
       <div className="mb-8 md:mb-16 sm:mx-0">
+     {
+      coverImage ? (
         <CoverImage title={title} coverImage={coverImage} />
+      ): <div className="flex justify-center items-center">No Image For This Post</div>
+     }
       </div>
       <div className="max-w-2xl mx-auto">
       <div className="hidden md:block md:mb-12">

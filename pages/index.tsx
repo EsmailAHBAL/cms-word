@@ -14,6 +14,7 @@ import Alert from '../components/alert'
 import CatNav from '../components/CateNav'
 import { useEffect, useState } from 'react'
 import Pagination from '../components/Pagination'
+import Footer from '../components/footer'
 
 export default function Index({ allPosts: { edges }, preview }) {
   const [currentPage,setCurrentPage ]= useState(1)
@@ -80,6 +81,7 @@ const firstIndex = lastIndex - ITEMS
         </div>
        </div>
     </section>
+    <Footer/>
 </>
   )
 }
