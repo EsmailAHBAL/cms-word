@@ -73,7 +73,7 @@ const firstIndex = lastIndex - ITEMS
  </Container>
  <div className="">
  <div className="py-4 border-t-2 border-black  mt-3 shadow-lg shadow-white">
-      <Pagination getCurrentPage={getCurrentPage} nPage={numberOfPage}/>    </div>
+      <Pagination getCurrentPage={getCurrentPage} nPage={numberOfPage} number="12"/>    </div>
  </div>
       </div>
     

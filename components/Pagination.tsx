@@ -1,5 +1,5 @@
-function  Pagination ({getCurrentPage,nPage}:{getCurrentPage:(n:number)=> void,nPage:number}) { 
- const TAB = new Array(Math.ceil(nPage/12)).fill(0)
+function  Pagination ({getCurrentPage,nPage,number}:{getCurrentPage:(n:number)=> void,nPage:number,number}) { 
+  const TAB = new Array(Math.ceil(nPage /number)).fill(0)
  if(!TAB.length) return <div className=""></div>
  return (
 <ol className="flex justify-center gap-1 text-xs font-medium">
@@ -10,7 +10,9 @@ function  Pagination ({getCurrentPage,nPage}:{getCurrentPage:(n:number)=> void,n
    <li key={ii}>
    <p
    onClick={()=> getCurrentPage(ii+1)}
-     className="block h-8 w-8 rounded border border-lg text-lg bg-white text-center leading-8 text-gray-900 border-black"
+     className="block h-8 w-8 rounded border border-lg text-lg
+     hover:bg-black hover:text-white 
+     bg-white text-center leading-8 text-gray-900 border-black"
    >
      {ii +1}
    </p>

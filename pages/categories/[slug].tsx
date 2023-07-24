@@ -15,8 +15,23 @@ import { getAllPostsWithSlug, getCategoryBySlug, getPostsByCategoryId } from '..
 import { CMS_NAME } from '../../lib/constants'
 import Link from 'next/link'
 import HeroPost from '../../components/hero-post'
+import Pagination from '../../components/Pagination'
+import { useEffect, useState } from 'react'
 
 export default function index({ posts ,preview}) {
+  const [currentPage,setCurrentPage ]= useState(1)
+  const [numberOfPage,setNumberOfPage]=useState<number>(0)
+const ITEMS =6
+const lastIndex = currentPage * ITEMS
+const firstIndex = lastIndex - ITEMS
+ useEffect(() => {
+  setCurrentPage(1)
+    setNumberOfPage(posts?.edges.length)
+
+ },[posts?.edges.length])
+  const getCurrentPage = (n: number)=> {
+    setCurrentPage(n)
+    }
 if(!posts?.edges.length) return <Layout preview={preview}><div className="flex justify-center items-center w-full h-[40vh]">.... No Post  In This Category 😅 </div></Layout>
 
   return (
@@ -24,7 +39,7 @@ if(!posts?.edges.length) return <Layout preview={preview}><div className="flex j
   <section>
           {
           
-              posts?.edges.map((heroPost:any,i:number )=> (
+              posts?.edges.slice(firstIndex,lastIndex).map((heroPost:any,i:number )=> (
                 <div className="" key={i}>
                   <HeroPost
               title={heroPost.node.title}
@@ -38,7 +53,11 @@ if(!posts?.edges.length) return <Layout preview={preview}><div className="flex j
               ))
             
           }
-        </section>  </Layout>
+        </section>  
+        <div className="py-4 border-t-2 border-black  mt-3 shadow-lg shadow-white">
+      <Pagination getCurrentPage={getCurrentPage} nPage={numberOfPage} number={ITEMS}/>   
+ </div>
+        </Layout>
 
   )
 }

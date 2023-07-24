@@ -14,7 +14,7 @@ const CatNav = () => {
     const [showMenu, setShowMenu] = useState(false);
     return (
       <>
-        <div className="md:hidden w-full  bg-white border-black border-2 py-4 border-x-0 border-t-0">
+        <div className="lg:hidden w-full  bg-white border-black border-2 py-4 border-x-0 border-t-0">
           <div className="flex justify-between p-3 pt-4 items-center">
             <Link className="font-black text-black font-mono" href="/">SmartMinCar</Link>
             <div className="Logo" onClick={() => setShowMenu(!showMenu)}>
