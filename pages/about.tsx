@@ -11,7 +11,7 @@ const About = () => {
         <Alert preview={preview} />
      <CatNav />
      <div className="h-[100vh]">
-      About
+      About Page 
      </div>
      <div className="">
       <Footer />
