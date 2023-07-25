@@ -10,7 +10,7 @@ const Privacy = () => {
     <Alert preview={preview}/>
        <Meta />
      <CatNav />
-     <div className="max-w-7xl mx-auto leading-7">
+     <div className="max-w-7xl mx-auto leading-7 p-4 md:p-1">
 <h2 className="py-4">     Privacy Policy
 </h2>
 

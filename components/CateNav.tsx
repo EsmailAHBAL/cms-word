@@ -15,8 +15,7 @@ const CatNav = () => {
     return (
       <>
         <div className="lg:hidden w-full  bg-white border-black border-2 py-4 border-x-0 border-t-0">
-          <div className="flex justify-between p-3 pt-4 items-center">
-            <Link className="font-black text-black font-mono" href="/">SmartMinCar</Link>
+          <div className="flex justify-end p-3 pt-4 items-center">
             <div className="Logo" onClick={() => setShowMenu(!showMenu)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

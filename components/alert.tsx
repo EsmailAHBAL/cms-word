@@ -3,6 +3,10 @@ import cn from 'classnames'
 import { EXAMPLE_PATH } from '../lib/constants'
 import Link from 'next/link'
 import Image from 'next/image'
+import {Russo_One} from 'next/font/google'
+const font = Russo_One({
+  subsets:['latin-ext'],weight:"400"
+})
 
 export default function Alert({ preview }) {
   return (
@@ -13,12 +17,14 @@ export default function Alert({ preview }) {
       })}
     >
       <Container>
+        <section className={font.className}>
+
         <div className="py-2 text-center bg-white text-gray-400">
           {preview ? (
             <>
     <div className="flex justify-around items-center">
 
-<Link href={"/"} className="font-extrabold md:p-4 p-2 text-xl md:text-2xl text-black font-serif">Smart Min
+<Link href={"/"} className="font-extrabold md:p-4 p-2 text-xl md:text-2xl text-black">Smart Mini
  <span className="text-gray-800 pl-1">Car</span> </Link>
   <Link href={"/"} className="text-black"><Image src={'/logo.png'} height={100} width={100} alt='n;o ' priority></Image></Link>
 </div>            </>
@@ -26,8 +32,8 @@ export default function Alert({ preview }) {
             <>
             <div className="flex justify-around items-center">
 
-            <Link href={"/"} className="font-extrabold md:p-4 p-2 text-xl md:text-2xl text-black font-serif">Smart Min
-             <span className="text-gray-700  pl-1">Car</span> </Link>
+            <Link href={"/"} className="font-extrabold md:p-4 p-2 text-xl md:text-2xl text-black ">Smart Mini
+             <span className="text-gray-900  pl-1">Car</span> </Link>
               <Link href={"/"} className="text-black"><Image src={'/logo.png'} height={100} width={100} alt='n;o
               
               '
@@ -40,6 +46,7 @@ export default function Alert({ preview }) {
             </>
           )}
         </div>
+          </section>
       </Container>
     </div>
   )

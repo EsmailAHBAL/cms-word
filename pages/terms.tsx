@@ -12,7 +12,7 @@ const Terms = () => {
 
     <Meta />
      <CatNav />
-     <div className="max-w-7xl mx-auto">
+     <div className="max-w-7xl mx-auto leading-7 p-4 md:p-1">
       <TermsBody />
       
      </div>

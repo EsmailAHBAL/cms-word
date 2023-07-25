@@ -10,7 +10,7 @@ const About = () => {
        <Meta />
         <Alert preview={preview} />
      <CatNav />
-     <div className="max-w-7xl mx-auto py-4">
+     <div className="max-w-7xl mx-auto leading-7 p-4 md:p-1">
 <h2 className="text-gray-700 py-3 text-3xl ">About Us!</h2>
 
     <h3 className="">Welcome To <span id="W_Name1" className="text-gray-800 hover:text-gray-300">smart mini car</span></h3>
