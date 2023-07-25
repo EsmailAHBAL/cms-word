@@ -12,21 +12,17 @@ function Hero() {
   );
   return () => clearTimeout(intervalId);
 }, []);
-  const slides = [
-   {
-    url: '/car1.jpg',
-  },   {
-   url: '/car3.jpg',
+const slides = [
+ {
+   url: 'https://images.unsplash.com/photo-1585011650347-c59dbef5a823?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
  },
  {
-  url: '/car4.jpg',
-},
-{
- url: '/car2.jpg',
-},
-
-
-  ];
+   url: 'https://images.unsplash.com/photo-1614026480209-cd9934144671?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+ },
+ {
+   url: 'https://images.unsplash.com/photo-1481575184241-4754ea78a1bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+ },
+];
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
