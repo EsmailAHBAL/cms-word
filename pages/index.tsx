@@ -48,7 +48,7 @@ const firstIndex = lastIndex - ITEMS
         </div>
         <div className="col-span-5  my-auto">
           <div className="h-[73vh] lg:h-[90vh] rounded-lg relative md:my-1">
-            hero 
+  <SliderHero />
           </div>
       <div className="-mt-11">
       <div className="pr-10 ">
