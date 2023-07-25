@@ -27,7 +27,7 @@ export default function Alert({ preview }) {
             <div className="flex justify-around items-center">
 
             <Link href={"/"} className="font-extrabold md:p-4 p-2 text-xl md:text-2xl text-black font-serif">Smart Min
-             <span className="text-[#00CAC0] pl-1">Car</span> </Link>
+             <span className="text-gray-700  pl-1">Car</span> </Link>
               <Link href={"/"} className="text-black"><Image src={'/logo.png'} height={100} width={100} alt='n;o ' priority></Image></Link>
             </div>
 
