@@ -5,22 +5,22 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 export default function HeroPost({
-  title,
-  coverImage,
-  date,
-  excerpt,
-  author,
-  slug,
+title,
+coverImage,
+date,
+excerpt,
+author,
+slug,
 }) {
-  return (
-  <article className=" bg-white transition hover:shadow-sm mt-5 border-4 border-x-0 border-gray-200 border-t-0 pb-4">
-    <div className="lg:hidden">
-      {coverImage ? (
+return (
+<article className=" bg-white transition hover:shadow-sm mt-5 border-4 border-x-0 border-gray-200 border-t-0 pb-4">
+  <div className="lg:hidden">
+    {coverImage ? (
 
-        <Image
-        height={5990} width={4000}
-        alt="Office"
-        src={coverImage.node.sourceUrl}
+      <Image
+      height={5990} width={4000}
+      alt="Office"
+      src={coverImage.node.sourceUrl}
         className="h-56 w-full object-contain"
         />
         ) : <div className="h-56 w-full  flex justify-center items-center  bg-gray-50">....</div>}
@@ -70,7 +70,7 @@ className="aspect-square object-contain h-48 w-full "
       
     </div>
 
-    <div className="sm:flex sm:items-end sm:justify-end">
+    <div className="sm:flex sm:items-end sm:justify-end pr-4">
       <Link
    href={`/posts/${slug}`}        className="block rounded-sm  border-2 border-black 
          px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition hover:bg-black hover:text-white ease-in-out "

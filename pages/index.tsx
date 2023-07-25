@@ -15,6 +15,7 @@ import CatNav from '../components/CateNav'
 import { useEffect, useState } from 'react'
 import Pagination from '../components/Pagination'
 import Footer from '../components/footer'
+import SliderHero from '../components/SliderHero'
 
 export default function Index({ allPosts: { edges }, preview }) {
   const [currentPage,setCurrentPage ]= useState(1)
@@ -45,9 +46,9 @@ const firstIndex = lastIndex - ITEMS
         <div className="col-span-1 order-last md:order-none">
           <SideCat></SideCat>
         </div>
-        <div className="col-span-5 ">
-          <div className="h-[60vh]">
-            <Intro></Intro>
+        <div className="col-span-5  my-auto">
+          <div className="h-[73vh] lg:h-[90vh] rounded-lg relative md:my-1">
+  <SliderHero />
           </div>
       <div className="-mt-11">
       <div className="pr-10 ">
@@ -59,9 +60,9 @@ const firstIndex = lastIndex - ITEMS
          <div className="" key={i}>
            <HeroPost
        title={heroPost.node.title}
+       author={heroPost.author}
        coverImage={heroPost.node.featuredImage}
        date={heroPost.node.date}
-       author={heroPost.node.author}
        slug={heroPost.node.slug}
        excerpt={heroPost.node.excerpt}
        />
