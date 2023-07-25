@@ -28,7 +28,11 @@ export default function Alert({ preview }) {
 
             <Link href={"/"} className="font-extrabold md:p-4 p-2 text-xl md:text-2xl text-black font-serif">Smart Min
              <span className="text-gray-700  pl-1">Car</span> </Link>
-              <Link href={"/"} className="text-black"><Image src={'/logo.png'} height={100} width={100} alt='n;o ' priority></Image></Link>
+              <Link href={"/"} className="text-black"><Image src={'/logo.png'} height={100} width={100} alt='n;o
+              
+              '
+              className="object-cover object-center w-full h-full"
+              priority></Image></Link>
             </div>
 
 

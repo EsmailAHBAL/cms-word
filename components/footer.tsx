@@ -22,9 +22,9 @@ export default function Footer() {
      </div>
       </div>
       <div className="w-full flex justify-center items-center ">
-        <div className="">
-          <div className="grid grid-cols-1 md:grid-cols-4  text-center gap-x-12  text-lg">
-            <a  href={`/about`}className="text-white cursor">About us</a>
+        <div className="py-7">
+          <div className="grid grid-cols-1 md:grid-cols-4  text-center gap-y-12 md:gap-x-12   text-lg ">
+            <a  href={`/about`}className="text-white cursor ">About us</a>
       <a  href={`/contact`}className="text-white pointer">Contact us</a>
             <a  href={`/terms`} className="text-white">Terms of use</a>
             <a href ={`/privacy`} className="text-white">Privacy Policy</a>

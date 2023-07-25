@@ -60,7 +60,7 @@ const firstIndex = lastIndex - ITEMS
          <div className="" key={i}>
            <HeroPost
        title={heroPost.node.title}
-       author={heroPost.author}
+       author={heroPost.autho}
        coverImage={heroPost.node.featuredImage}
        date={heroPost.node.date}
        slug={heroPost.node.slug}
