@@ -50,29 +50,29 @@ export default function Post({ post, posts, preview }) {
                 categories={post.categories}
               />
               <PostBody content={post.content} />
-               <div className="w-full h-full flex justify-center">
+              <div className="w-full h-full flex justify-center">
                 <div className="grid grid-cols-3 md:grid-cols-6 gap-x-4 gap-y-4 my-4">
-                    <WhatsappShareButton  url={fullURL}>
-                                  <WhatsappIcon  ></WhatsappIcon>
-                      </WhatsappShareButton>
-                      <FacebookShareButton  url={fullURL} >
-                                  <FacebookIcon  ></FacebookIcon>
-                      </FacebookShareButton>
-                      <TelegramShareButton url={fullURL}>
-                        <TelegramIcon ></TelegramIcon>
-                      </TelegramShareButton>
-                       <TwitterShareButton url={fullURL}>
-                        <TwitterIcon ></TwitterIcon>
-                       </TwitterShareButton>
-                       <LinkedinShareButton url={fullURL}>
-                        <LinkedinIcon ></LinkedinIcon>
-                       </LinkedinShareButton>
-                       <RedditShareButton url={fullURL}>
-                        <RedditIcon ></RedditIcon>
-                       </RedditShareButton>
+                  <WhatsappShareButton url={fullURL}>
+                    <WhatsappIcon  ></WhatsappIcon>
+                  </WhatsappShareButton>
+                  <FacebookShareButton url={fullURL} >
+                    <FacebookIcon  ></FacebookIcon>
+                  </FacebookShareButton>
+                  <TelegramShareButton url={fullURL}>
+                    <TelegramIcon ></TelegramIcon>
+                  </TelegramShareButton>
+                  <TwitterShareButton url={fullURL}>
+                    <TwitterIcon ></TwitterIcon>
+                  </TwitterShareButton>
+                  <LinkedinShareButton url={fullURL}>
+                    <LinkedinIcon ></LinkedinIcon>
+                  </LinkedinShareButton>
+                  <RedditShareButton url={fullURL}>
+                    <RedditIcon ></RedditIcon>
+                  </RedditShareButton>
                 </div>
-               </div>
-        
+              </div>
+
               <footer>
                 {post.tags.edges.length > 0 && <Tags tags={post.tags} />}
               </footer>
