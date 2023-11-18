@@ -13,7 +13,7 @@ import PostTitle from '../../components/post-title'
 import Tags from '../../components/tags'
 import { getAllPostsWithSlug, getPostAndMorePosts } from '../../lib/api'
 import { CMS_NAME } from '../../lib/constants'
-import { FacebookIcon, FacebookMessengerIcon, FacebookMessengerShareButton, FacebookShareButton, LinkedinIcon, LinkedinShareButton, RedditIcon, RedditShareButton, TelegramIcon, TelegramShareButton, TwitterIcon, TwitterShareButton, WhatsappIcon, WhatsappShareButton } from 'react-share'
+import { FacebookIcon, FacebookMessengerIcon, FacebookMessengerShareButton, FacebookShareButton, LinkedinIcon, LinkedinShareButton, PinterestIcon, PinterestShareButton, RedditIcon, RedditShareButton, TelegramIcon, TelegramShareButton, TwitterIcon, TwitterShareButton, WhatsappIcon, WhatsappShareButton } from 'react-share'
 
 export default function Post({ post, posts, preview }) {
   const router = useRouter()
@@ -55,8 +55,9 @@ export default function Post({ post, posts, preview }) {
                   <WhatsappShareButton url={fullURL}>
                     <WhatsappIcon  ></WhatsappIcon>
                   </WhatsappShareButton>
-                  <FacebookShareButton url={fullURL} >
+                  <FacebookShareButton url={fullURL} quote={post.featuredImage}>
                     <FacebookIcon  ></FacebookIcon>
+
                   </FacebookShareButton>
                   <TelegramShareButton url={fullURL}>
                     <TelegramIcon ></TelegramIcon>
