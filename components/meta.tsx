@@ -36,6 +36,20 @@ export default function Meta() {
         name="description"
         content={`A statically generated blog example using Next.js and ${CMS_NAME}.`}
       />
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-XBK7VEN5D0"></script>
+      <script dangerouslySetInnerHTML={
+        {
+          __html: `
+window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XBK7VEN5D0');
+`
+        }
+      }>
+
+      </script>
       <meta property="og:image" content={HOME_OG_IMAGE_URL} />
     </Head>
   )
