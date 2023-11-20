@@ -107,7 +107,7 @@ export async function getAllCategories(preview) {
   return data?.categories.edges.map(({ node = {} }) => node);
 
 }
-export async function getCategoryBySlug(slug: string ,preview) {
+export async function getCategoryBySlug(slug: string, preview) {
   const data = await fetchAPI(
     `
     query CategoryBySlug($slug: ID!) {
@@ -131,8 +131,8 @@ export async function getCategoryBySlug(slug: string ,preview) {
 
   return data
 }
-export async function getPostsByCategoryId(categoryId: string ,preview) {
-  const data = await fetchAPI( `
+export async function getPostsByCategoryId(categoryId: string, preview) {
+  const data = await fetchAPI(`
   query PostsByCategoryId($categoryId: Int!) {
     posts(where: { categoryId: $categoryId, hasPassword: false }) {
       edges {
@@ -210,7 +210,7 @@ export async function getAllPostsForHome(preview) {
   const data = await fetchAPI(
     `
     query AllPosts {
-      posts(first: 20, where: { orderby: { field: DATE, order: DESC } }) {
+      posts(first: 1000, where: { orderby: { field: DATE, order: DESC } }) {
         edges {
           node {
             title
@@ -302,9 +302,9 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
         ...PostFields
         content
         ${
-          // Only some of the fields of a revision are considered as there are some inconsistencies
-          isRevision
-            ? `
+    // Only some of the fields of a revision are considered as there are some inconsistencies
+    isRevision
+      ? `
         revisions(first: 1, where: { orderby: { field: MODIFIED, order: DESC } }) {
           edges {
             node {
@@ -320,8 +320,8 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
           }
         }
         `
-            : ''
-        }
+      : ''
+    }
       }
       posts(first: 3, where: { orderby: { field: DATE, order: DESC } }) {
         edges {

@@ -54,7 +54,7 @@ export default function Index({ allPosts: { edges }, preview }) {
               <div className="pr-10 ">
                 <Container >
 
-                  <section className="grid grid-cols-1 lg:grid-cols-2 gap-x-3">
+                  <section className="grid grid-cols-1 lg:grid-cols-2  gap-x-3">
                     {
                       edges.slice(firstIndex, lastIndex).map((heroPost: any, i: number) => (
                         <div className="" key={i}>
@@ -89,6 +89,8 @@ export default function Index({ allPosts: { edges }, preview }) {
 
 export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
   const allPosts = await getAllPostsForHome(preview)
+  console.log(allPosts);
+
 
   return {
     props: { allPosts, preview },
