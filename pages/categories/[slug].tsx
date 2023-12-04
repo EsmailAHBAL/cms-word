@@ -1,10 +1,23 @@
+import { useRouter } from "next/router";
+import ErrorPage from "next/error";
+import Head from "next/head";
 import { GetStaticPaths, GetStaticProps } from "next";
+import Container from "../../components/container";
+import PostBody from "../../components/post-body";
+import MoreStories from "../../components/more-stories";
+import Header from "../../components/header";
+import PostHeader from "../../components/post-header";
+import SectionSeparator from "../../components/section-separator";
 import Layout from "../../components/layout";
+import PostTitle from "../../components/post-title";
+import Tags from "../../components/tags";
 import {
   getAllPostsWithSlug,
   getCategoryBySlug,
   getPostsByCategoryId,
 } from "../../lib/api";
+import { CMS_NAME } from "../../lib/constants";
+import Link from "next/link";
 import HeroPost from "../../components/hero-post";
 import Pagination from "../../components/Pagination";
 import { useEffect, useState } from "react";
@@ -30,13 +43,6 @@ export default function index({ posts, preview }) {
         </div>
       </Layout>
     );
-  if (!posts) {
-    return (
-      <div className="flex justify-center items-center h-[40vh]">
-        something error here
-      </div>
-    );
-  }
 
   return (
     <Layout preview={preview}>
