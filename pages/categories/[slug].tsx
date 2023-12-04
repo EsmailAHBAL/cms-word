@@ -30,6 +30,13 @@ export default function index({ posts, preview }) {
         </div>
       </Layout>
     );
+  if (!posts) {
+    return (
+      <div className="flex justify-center items-center h-[40vh]">
+        something error here
+      </div>
+    );
+  }
 
   return (
     <Layout preview={preview}>
