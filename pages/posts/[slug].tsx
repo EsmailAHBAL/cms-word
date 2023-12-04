@@ -16,6 +16,7 @@ import {
   FacebookShareButton,
   LinkedinIcon,
   LinkedinShareButton,
+  RedditIcon,
   RedditShareButton,
   TelegramIcon,
   TelegramShareButton,
