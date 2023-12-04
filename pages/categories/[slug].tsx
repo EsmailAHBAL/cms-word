@@ -15,6 +15,7 @@ import {
   getAllPostsWithSlug,
   getCategoryBySlug,
   getPostsByCategoryId,
+  getAllCategoriesOfCars,
 } from "../../lib/api";
 import { CMS_NAME } from "../../lib/constants";
 import Link from "next/link";
